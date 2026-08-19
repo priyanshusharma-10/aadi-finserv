@@ -2,13 +2,11 @@ import { useState } from 'react';
 import { Input } from '../common/Input';
 import { Select } from '../common/Select';
 import { Button } from '../common/Button';
+import { EmiCalculator } from '../calculator/EmiCalculator';
 import type { LoanDetails } from '../../types/application';
 import { validateLoanDetails, hasErrors } from '../../utils/validation';
 import { loanConfig } from '../../config/loanConfig';
-import { calculateEMI } from '../../utils/emiCalculator';
-import { formatINR, formatPercentage } from '../../utils/formatting';
 import styles from './ApplicationStep.module.css';
-import previewStyles from './LoanDetailsStep.module.css';
 
 const loanPurposeOptions = [
   { value: 'medical', label: 'Medical Emergency' },
@@ -22,9 +20,14 @@ const loanPurposeOptions = [
 ];
 
 const tenureOptions = Array.from(
-  { length: (loanConfig.maxTenure - loanConfig.minTenure) / loanConfig.tenureStep + 1 },
+  {
+    length:
+      (loanConfig.maxTenureMonths - loanConfig.minTenureMonths) /
+        loanConfig.tenureStepMonths +
+      1,
+  },
   (_, i) => {
-    const months = loanConfig.minTenure + i * loanConfig.tenureStep;
+    const months = loanConfig.minTenureMonths + i * loanConfig.tenureStepMonths;
     const label =
       months < 12
         ? `${months} months`

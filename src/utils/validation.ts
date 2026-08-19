@@ -89,7 +89,7 @@ export function validateLoanAmount(value: string): string | null {
 export function validateFile(
   file: File,
   maxSizeMb = loanConfig.maxFileSizeMb,
-  allowedTypes = loanConfig.allowedFileTypes
+  allowedTypes: readonly string[] = loanConfig.allowedFileTypes
 ): string | null {
   const maxBytes = maxSizeMb * 1024 * 1024;
   if (file.size > maxBytes) return `File size must not exceed ${maxSizeMb}MB.`;
