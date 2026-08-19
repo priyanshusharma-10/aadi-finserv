@@ -1,0 +1,62 @@
+.page {
+  min-height: calc(100vh - var(--header-height));
+  padding-top: calc(var(--header-height) + var(--space-12));
+  padding-bottom: var(--space-20);
+  background: var(--color-background-soft);
+  transition: background-color var(--duration-normal);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--space-10);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 800;
+  color: var(--color-text-heading);
+  margin: 0 0 var(--space-3);
+}
+
+.subtitle {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.stepIndicatorWrapper {
+  max-width: 680px;
+  margin: 0 auto var(--space-10);
+}
+
+.formCard {
+  background: var(--color-background-card);
+  border-radius: var(--radius-2xl);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-xl);
+  padding: var(--space-10);
+  max-width: 780px;
+  margin: 0 auto;
+  transition: background-color var(--duration-normal), border-color var(--duration-normal), box-shadow var(--duration-normal);
+}
+
+.submissionError {
+  background: var(--color-error-bg);
+  border: 1px solid var(--color-error);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--color-error);
+  margin-bottom: var(--space-6);
+}
+
+@media (max-width: 768px) {
+  .formCard { padding: var(--space-6); }
+}
+
+@media (max-width: 480px) {
+  .page { padding-top: calc(var(--header-height) + var(--space-8)); }
+  .formCard { padding: var(--space-4); }
+  .title { font-size: var(--text-2xl); }
+}

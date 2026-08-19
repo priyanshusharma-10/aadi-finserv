@@ -1,0 +1,201 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.labelRow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.label {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.required { color: var(--color-error); }
+
+.description {
+  font-size: var(--text-xs);
+  color: var(--color-text-subtle);
+}
+
+/* Dropzone */
+.dropzone {
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  cursor: pointer;
+  transition: border-color var(--duration-normal), background var(--duration-normal);
+  text-align: center;
+  background: var(--color-background-soft);
+}
+
+.dropzone:hover, .dropzone:focus-visible {
+  border-color: var(--color-primary);
+  background: var(--color-primary-50);
+  outline: none;
+}
+
+.dragOver {
+  border-color: var(--color-accent);
+  background: var(--color-accent-50);
+}
+
+.hasError {
+  border-color: var(--color-error);
+  background: var(--color-error-bg);
+}
+
+.uploadIcon { color: var(--color-text-muted); }
+
+.dropzoneText {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.dropzoneLink {
+  color: var(--color-primary);
+  font-weight: var(--font-semibold);
+  text-decoration: underline;
+}
+
+.dropzoneHint {
+  font-size: var(--text-xs);
+  color: var(--color-text-subtle);
+  margin: 0;
+}
+
+.errorMsg {
+  font-size: var(--text-xs);
+  color: var(--color-error);
+  margin: 0;
+}
+
+/* File card */
+.fileCard {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-background-card);
+}
+
+.fileCard.uploading { border-color: var(--color-accent); background: var(--color-accent-50); }
+.fileCard.success   { border-color: var(--color-success); background: var(--color-success-bg); }
+.fileCard.error     { border-color: var(--color-error);   background: var(--color-error-bg); }
+
+.preview {
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+.fileIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: var(--color-background-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+.fileInfo {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.fileName {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+
+.fileMeta {
+  font-size: var(--text-xs);
+  color: var(--color-text-subtle);
+  margin: 0;
+  font-family: var(--font-mono);
+}
+
+.progressBar {
+  height: 4px;
+  background: var(--color-border);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--color-accent);
+  border-radius: var(--radius-full);
+  transition: width var(--duration-fast);
+}
+
+.successMsg {
+  font-size: var(--text-xs);
+  color: var(--color-success);
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin: 0;
+}
+
+.fileActions {
+  display: flex;
+  gap: var(--space-1);
+  flex-shrink: 0;
+}
+
+.actionBtn {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  transition: background var(--duration-fast), color var(--duration-fast);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.actionBtn:hover { background: var(--color-background-soft); color: var(--color-text); }
+.removeBtn:hover { background: var(--color-error-bg); color: var(--color-error); }
+
+.uploadError {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--color-error);
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-error-bg);
+  border-radius: var(--radius-md);
+}
